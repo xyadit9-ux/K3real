@@ -5,6 +5,7 @@ import { LevelChart } from "@/components/LevelChart";
 import { Badge } from "@/components/ui/badge";
 import { Droplet, AlertTriangle, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { WaterLevelGauge } from "@/components/WaterLevelGauge";
 
 const getBahayaClasses = (bahaya: string) => {
   switch (bahaya.toUpperCase()) {
@@ -50,16 +51,8 @@ const Index = () => {
 
       {/* Dashboard Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        {/* Card 1: Level Air */}
-        <DataCard
-          title="Level Air"
-          icon={Droplet}
-          value={
-            <span className="text-primary">
-              {riverData.level.toFixed(2)} cm
-            </span>
-          }
-        />
+        {/* Card 1: Level Air (Gauge) */}
+        <WaterLevelGauge level={riverData.level} maxLevel={50} />
 
         {/* Card 2: Status Bahaya */}
         <DataCard
