@@ -3,7 +3,7 @@ import { useMqttMonitoring } from "@/hooks/use-mqtt-monitoring";
 import { DataCard } from "@/components/DataCard";
 import { LevelChart } from "@/components/LevelChart";
 import { Badge } from "@/components/ui/badge";
-import { Water, AlertTriangle, Zap } from "lucide-react";
+import { Droplet, AlertTriangle, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const getBahayaClasses = (bahaya: string) => {
@@ -53,7 +53,7 @@ const Index = () => {
         {/* Card 1: Level Air */}
         <DataCard
           title="Level Air"
-          icon={Water}
+          icon={Droplet}
           value={
             <span className="text-primary">
               {riverData.level.toFixed(2)} cm
